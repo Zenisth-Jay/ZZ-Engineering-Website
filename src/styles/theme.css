@@ -1,0 +1,133 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  /* Cool Off-White Background */
+  --background: #F8FAFC; 
+  /* Dark Slate for Text */
+  --foreground: #1E293B; 
+  
+  /* Cards remain white */
+  --card: #FFFFFF;
+  --card-foreground: #1E293B;
+  
+  --popover: #FFFFFF;
+  --popover-foreground: #1E293B;
+  
+  /* Primary: Deep Authority (Slate Navy) */
+  --primary: #0F172A;
+  --primary-foreground: #F8FAFC;
+  
+  /* Secondary: Engineer's Accent (Amber/Gold) */
+  --secondary: #F59E0B;
+  --secondary-foreground: #0F172A;
+  
+  /* Muted Slate */
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  
+  --accent: #F1F5F9;
+  --accent-foreground: #0F172A;
+  
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --input-background: #FFFFFF;
+  --switch-background: #CBD5E1;
+  --ring: #0F172A;
+  
+  --radius: 0.75rem; /* 12px as requested */
+  
+  --chart-1: #0F172A;
+  --chart-2: #F59E0B;
+  --chart-3: #334155;
+  --chart-4: #94A3B8;
+  --chart-5: #CBD5E1;
+
+  --sidebar: #F8FAFC;
+  --sidebar-foreground: #1E293B;
+  --sidebar-primary: #0F172A;
+  --sidebar-primary-foreground: #F8FAFC;
+  --sidebar-accent: #F1F5F9;
+  --sidebar-accent-foreground: #1E293B;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #0F172A;
+  
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+.dark {
+  --background: #0F172A;
+  --foreground: #F8FAFC;
+  --card: #1E293B;
+  --card-foreground: #F8FAFC;
+  --popover: #1E293B;
+  --popover-foreground: #F8FAFC;
+  --primary: #F8FAFC;
+  --primary-foreground: #0F172A;
+  --secondary: #F59E0B;
+  --secondary-foreground: #0F172A;
+  --muted: #334155;
+  --muted-foreground: #94A3B8;
+  --accent: #334155;
+  --accent-foreground: #F8FAFC;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #334155;
+  --input: #334155;
+  --ring: #F59E0B;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
