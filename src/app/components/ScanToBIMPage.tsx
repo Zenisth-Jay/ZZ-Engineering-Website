@@ -19,9 +19,9 @@ import { Button } from '@/app/components/ui/button';
 import { caseStudies } from '@/app/data/caseStudies';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import flow1Image from 'figma:asset/Flow 1.png';
-import flow2Image from 'figma:asset/Flow 2.png';
-import flow3Image from 'figma:asset/Flow 3.png';
-import flow4Image from 'figma:asset/Flow 4.png';
+import flow2Image from 'figma:asset/flow 2.png';
+import flow3Image from 'figma:asset/flow 3.png';
+import flow4Image from 'figma:asset/flow 4.png';
 
 export function ScanToBIMPage() {
   const navigate = useNavigate();
