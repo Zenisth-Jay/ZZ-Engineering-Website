@@ -4,9 +4,9 @@ import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import { TestimonialsCarousel } from '@/app/components/TestimonialsCarousel';
 import heroImage from 'figma:asset/d522a823ecc00c4b530485c18f8ffedb2eb4a8ef.png';
 import service1Image from 'figma:asset/Service 1.png';
-import service2Image from 'figma:asset/Service 2.png';
-import service3Image from 'figma:asset/Service 3.png';
-import service4Image from 'figma:asset/Service 4.png';
+import service2Image from 'figma:asset/service 2.png';
+import service3Image from 'figma:asset/service 3.png';
+import service4Image from 'figma:asset/service 4.png';
 
 export function EngineeringServices() {
   const scrollToSection = (sectionId: string) => {
