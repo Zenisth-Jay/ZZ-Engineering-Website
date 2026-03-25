@@ -2,6 +2,7 @@ import Slider from 'react-slick';
 import { Star } from 'lucide-react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { useEffect, useState } from 'react';
 
 const testimonials = [
     {
@@ -70,34 +71,33 @@ const testimonials = [
     }
 ];
 
-const carouselSettings = {
-    dots: false,
-    infinite: true,
-    speed: 5000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: 'linear',
-    pauseOnHover: true,
-    arrows: false,
-    responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 2,
-            }
-        },
-        {
-            breakpoint: 640,
-            settings: {
-                slidesToShow: 1,
-            }
-        }
-    ]
-};
-
 export function TestimonialsCarousel() {
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkScreen = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkScreen(); // run on load
+        window.addEventListener('resize', checkScreen);
+
+        return () => window.removeEventListener('resize', checkScreen);
+    }, []);
+
+    const carouselSettings = {
+        dots: false,
+        infinite: true,
+        speed: 5000,
+        slidesToShow: isMobile ? 1 : 3, // ✅ FIXED
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 0,
+        cssEase: 'linear',
+        pauseOnHover: true,
+        arrows: false,
+    };
     return (
         <section id="testimonials" className="py-20 lg:py-32 bg-primary relative overflow-hidden">
             {/* Background Pattern */}
@@ -114,11 +114,11 @@ export function TestimonialsCarousel() {
                 </div>
 
                 {/* Testimonials Carousel */}
-                <div className="testimonials-carousel">
+                <div className="testimonials-carousel overflow-hidden">
                     <Slider {...carouselSettings}>
                         {testimonials.map((testimonial) => (
-                            <div key={testimonial.id} className="px-3">
-                                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-secondary/50 transition-all h-full min-h-[320px] flex flex-col">
+                            <div key={testimonial.id} className="px-2 sm:px-3">
+                                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-secondary/50 transition-all h-full min-h-[280px] flex flex-col">
                                     {/* Stars */}
                                     <div className="flex gap-1 mb-4">
                                         {[...Array(testimonial.stars)].map((_, i) => (

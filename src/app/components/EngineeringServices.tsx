@@ -3,6 +3,10 @@ import { Button } from '@/app/components/ui/button';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
 import { TestimonialsCarousel } from '@/app/components/TestimonialsCarousel';
 import heroImage from 'figma:asset/d522a823ecc00c4b530485c18f8ffedb2eb4a8ef.png';
+import service1Image from 'figma:asset/Service 1.png';
+import service2Image from 'figma:asset/Service 2.png';
+import service3Image from 'figma:asset/Service 3.png';
+import service4Image from 'figma:asset/Service 4.png';
 
 export function EngineeringServices() {
   const scrollToSection = (sectionId: string) => {
@@ -17,6 +21,8 @@ export function EngineeringServices() {
       id: 1,
       title: 'Develop Plans & Process Permits',
       icon: Building2,
+      image: service1Image,
+      description: 'Comprehensive solutions from conceptual design to final city approvals, ensuring rapid and compliant project launches.',
       items: [
         'Residential & Commercial Buildings',
         'Accessory Dwelling Unit (ADU)',
@@ -30,6 +36,7 @@ export function EngineeringServices() {
       id: 2,
       title: 'Land Development',
       icon: Layers3,
+      image: service2Image,
       items: [
         'Lot Split (SB9 & Conventional)',
         'Grading Plan',
@@ -45,6 +52,7 @@ export function EngineeringServices() {
       id: 3,
       title: 'Foundation Inspection',
       icon: Home,
+      image: service3Image,
       items: [
         'Slab-on-Grade Foundation: Examining for floor cracks, water damage, and other distress on the house',
         'Raised Foundation: Evaluating the pier post & beams, stem wall and the overall integrity of the foundation',
@@ -57,6 +65,7 @@ export function EngineeringServices() {
       id: 4,
       title: 'Other Services',
       icon: Wrench,
+      image: service4Image,
       items: [
         'Code Violation Resolution',
         'Design of beam, column & footing in lieu of the bearing wall to be removed',
@@ -146,21 +155,42 @@ export function EngineeringServices() {
                   key={service.id}
                   className={`
                     ${isLarge ? 'lg:col-span-2 lg:row-span-2' : 'lg:col-span-2 lg:row-span-1'}
-                    bg-white rounded-2xl p-8 border border-slate-200 hover:border-secondary hover:shadow-xl 
-                    transition-all duration-300 hover:-translate-y-1 group
+                    bg-white rounded-2xl border border-slate-200 hover:border-secondary hover:shadow-xl 
+                    transition-all duration-300 hover:-translate-y-1 group overflow-hidden flex flex-col
                   `}
                 >
-                  <div className="flex flex-col h-full">
-                    <div className="mb-6">
-                      <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
+                  {service.image ? (
+                    <div className="relative h-72 w-full overflow-hidden flex-shrink-0">
+                      <ImageWithFallback
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      {/* Icon overlay on absolute top-left like the reference image */}
+                      <div className="absolute top-6 left-6 w-14 h-14 bg-secondary/95 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-transform">
+                        <Icon className="w-7 h-7 text-primary" />
+                      </div>
+                    </div>
+                  ) : null}
+
+                  <div className={`flex flex-col flex-1 ${service.image ? 'p-8 pt-6' : 'p-8'}`}>
+                    {!service.image && (
+                      <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors">
                         <Icon className="w-7 h-7 text-secondary" />
                       </div>
-                      <h3 className="text-2xl font-bold text-primary mb-4 font-heading">
-                        {service.title}
-                      </h3>
-                    </div>
+                    )}
 
-                    <ul className="space-y-3 flex-1">
+                    <h3 className="text-2xl font-bold text-primary mb-4 font-heading group-hover:text-secondary transition-colors">
+                      {service.title}
+                    </h3>
+
+                    {service.description && (
+                      <p className="text-slate-600 mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
+                    )}
+
+                    <ul className="space-y-3 flex-1 mb-6">
                       {service.items.map((item, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-slate-700">
                           <span className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
@@ -169,7 +199,7 @@ export function EngineeringServices() {
                       ))}
                     </ul>
 
-                    <div className="mt-6 pt-6 border-t border-slate-100">
+                    <div className="mt-auto pt-6 border-t border-slate-100">
                       <button
                         onClick={() => scrollToSection('contact')}
                         className="text-secondary font-semibold text-sm uppercase tracking-wide hover:text-amber-600 transition-colors flex items-center gap-2 group/btn"

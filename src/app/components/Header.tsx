@@ -6,7 +6,8 @@ import logo from 'figma:asset/logo.svg';
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isDesktopServicesDropdownOpen, setIsDesktopServicesDropdownOpen] = useState(false);
+  const [isMobileServicesDropdownOpen, setIsMobileServicesDropdownOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
@@ -25,7 +26,7 @@ export function Header() {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsServicesDropdownOpen(false);
+        setIsDesktopServicesDropdownOpen(false);
       }
     };
 
@@ -56,7 +57,8 @@ export function Header() {
 
   const handleNavigation = (sectionId: string) => {
     setIsMobileMenuOpen(false);
-    setIsServicesDropdownOpen(false);
+    setIsDesktopServicesDropdownOpen(false);
+    setIsMobileServicesDropdownOpen(false);
 
     if (isHomePage) {
       const element = document.getElementById(sectionId);
@@ -71,7 +73,8 @@ export function Header() {
 
   const handlePageNavigation = (path: string) => {
     setIsMobileMenuOpen(false);
-    setIsServicesDropdownOpen(false);
+    setIsDesktopServicesDropdownOpen(false);
+    setIsMobileServicesDropdownOpen(false);
     navigate(path);
   };
 
@@ -91,12 +94,12 @@ export function Header() {
       clearTimeout(closeTimeoutRef.current);
       closeTimeoutRef.current = null;
     }
-    setIsServicesDropdownOpen(true);
+    setIsDesktopServicesDropdownOpen(true);
   };
 
   const handleDropdownMouseLeave = () => {
     closeTimeoutRef.current = setTimeout(() => {
-      setIsServicesDropdownOpen(false);
+      setIsDesktopServicesDropdownOpen(false);
     }, 300); // 300ms delay before closing
   };
 
@@ -137,12 +140,13 @@ export function Header() {
               onMouseLeave={handleDropdownMouseLeave}
             >
               <button
+                onClick={() => setIsDesktopServicesDropdownOpen(!isDesktopServicesDropdownOpen)}
                 className="text-sm font-medium text-slate-300 hover:text-secondary transition-colors uppercase tracking-wider flex items-center gap-1"
               >
                 Services
                 <ChevronDown className="w-4 h-4" />
               </button>
-              {isServicesDropdownOpen && (
+              {isDesktopServicesDropdownOpen && (
                 <div className="absolute top-full left-0 mt-2 bg-slate-800 rounded-lg shadow-xl border border-white/10 py-2 min-w-[220px] z-50">
                   {serviceItems.map((service) => (
                     <button
@@ -198,68 +202,82 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-white/10 bg-primary">
-            <nav className="flex flex-col gap-4">
+          <div className="lg:hidden py-4 border-t border-white/10 bg-primary shadow-2xl">
+            <nav className="flex flex-col gap-2">
               {navItems.map((item) => (
-                <button
+                <a
                   key={item.id}
-                  onClick={() => handleNavigation(item.id)}
-                  className="text-left text-slate-300 hover:text-secondary transition-colors font-medium py-2 uppercase tracking-wide px-2"
+                  href={`#${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(item.id);
+                  }}
+                  className="block w-full text-left text-slate-300 hover:text-secondary active:text-secondary transition-colors font-medium py-3 px-4 uppercase tracking-wide"
                 >
                   {item.label}
-                </button>
+                </a>
               ))}
 
               {/* Services Section in Mobile */}
-              <div className="px-2">
+              <div>
                 <button
-                  onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                  className="flex items-center justify-between w-full text-left text-slate-300 hover:text-secondary transition-colors font-medium py-2 uppercase tracking-wide"
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMobileServicesDropdownOpen(!isMobileServicesDropdownOpen);
+                  }}
+                  className="flex items-center justify-between w-full text-left text-slate-300 hover:text-secondary active:text-secondary transition-colors font-medium py-3 px-4 uppercase tracking-wide"
                 >
                   Services
-                  <ChevronDown className={`w-4 h-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isMobileServicesDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
-                {isServicesDropdownOpen && (
-                  <div className="pl-4 mt-2 space-y-2">
+                {isMobileServicesDropdownOpen && (
+                  <div className="bg-slate-800/50 py-2 border-y border-white/5">
                     {serviceItems.map((service) => (
-                      <button
+                      <a
                         key={service.label}
-                        onClick={() => {
+                        href={service.path || `#${service.id}`}
+                        onClick={(e) => {
+                          e.preventDefault();
                           if (service.path) {
                             handlePageNavigation(service.path);
                           } else if (service.id) {
                             handleNavigation(service.id);
                           }
                         }}
-                        className="block text-left text-slate-400 hover:text-secondary transition-colors text-sm py-2"
+                        className="block w-full text-left text-slate-400 hover:text-secondary active:text-secondary transition-colors text-sm py-3 px-8 font-medium"
                       >
                         {service.label}
-                      </button>
+                      </a>
                     ))}
                   </div>
                 )}
               </div>
 
-              <button
-                onClick={() => handleNavigation('contact')}
-                className="text-left text-slate-300 hover:text-secondary transition-colors font-medium py-2 uppercase tracking-wide px-2"
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation('contact');
+                }}
+                className="block w-full text-left text-slate-300 hover:text-secondary active:text-secondary transition-colors font-medium py-3 px-4 uppercase tracking-wide"
               >
                 Contact
-              </button>
+              </a>
 
-              <div className="pt-4 border-t border-white/10 space-y-4 px-2">
+              <div className="pt-4 border-t border-white/10 space-y-4 px-4 mt-2">
                 <a
                   href="tel:3102186216"
-                  className="flex items-center gap-2 text-sm text-slate-300 hover:text-secondary"
+                  className="flex items-center gap-3 text-sm text-slate-300 hover:text-secondary active:text-secondary p-2 -ml-2 rounded-lg"
                 >
-                  <Phone className="w-4 h-4 text-secondary" />
+                  <Phone className="w-5 h-5 text-secondary" />
                   (310) 218-6216
                 </a>
                 <a
                   href="mailto:pesteban@zionengineeringllc.com"
-                  className="flex items-center gap-2 text-sm text-slate-300 hover:text-secondary"
+                  className="flex items-center gap-3 text-sm text-slate-300 hover:text-secondary active:text-secondary p-2 -ml-2 rounded-lg break-all"
                 >
-                  <Mail className="w-4 h-4 text-secondary" />
+                  <Mail className="w-5 h-5 text-secondary flex-shrink-0" />
                   pesteban@zionengineeringllc.com
                 </a>
               </div>

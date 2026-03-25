@@ -21,7 +21,7 @@ export function ServicesSection() {
           {/* Engineering Services Card */}
           <button
             onClick={() => navigate('/engineering-services')}
-            className="group relative overflow-hidden rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-500 text-left bg-white hover:scale-[1.02]"
+            className="group relative overflow-hidden rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-500 text-left bg-white hover:scale-[1.02] flex flex-col h-full"
           >
             <div className="relative h-80 overflow-hidden">
               <img
@@ -37,7 +37,7 @@ export function ServicesSection() {
               </div>
             </div>
             
-            <div className="p-8">
+            <div className="p-8 flex flex-col flex-1">
               <h4 className="text-2xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors duration-300">
                 Engineering Services
               </h4>
@@ -61,7 +61,7 @@ export function ServicesSection() {
                 </li>
               </ul>
               
-              <div className="flex items-center text-secondary font-semibold group-hover:translate-x-2 transition-transform duration-300">
+              <div className="mt-auto flex items-center text-secondary font-semibold group-hover:translate-x-2 transition-transform duration-300">
                 <span>Explore Services</span>
                 <ArrowRight className="w-5 h-5 ml-2" />
               </div>

@@ -71,9 +71,11 @@ export function About() {
               <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0">
                 <Award className="w-5 h-5 text-secondary" />
               </div>
-              <div>
-                <div className="font-bold text-primary text-sm mt-0.5">Paul Esteban, P.E.</div>
-                <div className="text-[9px] text-slate-500 uppercase tracking-widest font-bold mt-1">Principal Engineer</div>
+              <div className='flex flex-wrap'>
+                <div className="font-bold text-primary text-2xl mt-0.5 flex flex-wrap items-center gap-1">
+                  Paul Esteban, P.E. <span className=" flex flex-wrap items-center text-[15px] text-slate-500 uppercase tracking-widest font-bold mt-1">(Principal Engineer)</span> 
+                </div>
+                {/* <div className="text-[9px] text-slate-500 uppercase tracking-widest font-bold mt-1">Principal Engineer</div> */}
               </div>
             </div>
           </div>

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from '@/app/RouterContext';
-import { 
-  ArrowRight, 
-  Building2, 
-  Layers, 
+import {
+  ArrowRight,
+  Building2,
+  Layers,
   Gauge,
   CheckCircle2,
   PlusCircle,
@@ -18,6 +18,10 @@ import {
 import { Button } from '@/app/components/ui/button';
 import { caseStudies } from '@/app/data/caseStudies';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
+import flow1Image from 'figma:asset/Flow 1.png';
+import flow2Image from 'figma:asset/Flow 2.png';
+import flow3Image from 'figma:asset/Flow 3.png';
+import flow4Image from 'figma:asset/Flow 4.png';
 
 export function ScanToBIMPage() {
   const navigate = useNavigate();
@@ -34,21 +38,25 @@ export function ScanToBIMPage() {
     {
       number: '01',
       title: '3D Data Capture',
+      image: flow1Image,
       description: 'Deploy terrestrial laser scanners (Leica, Faro, Trimble), mobile LiDAR, drone photogrammetry, or iPhone/iPad LiDAR to capture point cloud data (.rcp, .e57, .las).',
     },
     {
       number: '02',
       title: 'Point Cloud Registration',
+      image: flow2Image,
       description: 'Align all scans into a single coordinate system using Leica Cyclone, Faro Scene, Trimble RealWorks, or Autodesk ReCap for a clean, unified point cloud.',
     },
     {
       number: '03',
       title: 'BIM Modeling',
+      image: flow3Image,
       description: 'Trace and interpret point cloud data to create structural elements (beams, columns, slabs), architectural geometry, MEP systems, and site topography in Revit or ArchiCAD.',
     },
     {
       number: '04',
       title: 'QA/QC & Validation',
+      image: flow4Image,
       description: 'Check tolerances (typically ±1/8" to ±1/4"), perform clash detection between existing and proposed elements, and generate deviation maps.',
     },
   ];
@@ -170,9 +178,9 @@ export function ScanToBIMPage() {
               <span className="text-secondary">Convert Reality into Reliable 3D-Models</span>
             </h1>
             <p className="text-xl lg:text-2xl text-slate-300 leading-relaxed font-light mb-10">
-              Bring the built world into your BIM workflows. Zion Engineering's Scan-to-BIM service converts 
-              high-accuracy point cloud surveys into intelligent, construction-ready Revit models and as-built 
-              documentation — reducing guesswork, rework, and project delays on complex retrofit, renovation, 
+              Bring the built world into your BIM workflows. Zion Engineering's Scan-to-BIM service converts
+              high-accuracy point cloud surveys into intelligent, construction-ready Revit models and as-built
+              documentation — reducing guesswork, rework, and project delays on complex retrofit, renovation,
               and historic preservation projects across California.
             </p>
             <Button
@@ -211,28 +219,28 @@ export function ScanToBIMPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {coreProducts.map((service, index) => (
-              <div 
+              <div
                 key={index}
                 className="group bg-white border border-slate-200 p-8 rounded-xl hover:bg-slate-50 transition-all duration-300 hover:border-secondary hover:-translate-y-1 hover:shadow-xl relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
                   <service.icon className="w-24 h-24 text-primary" />
                 </div>
-                
+
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-lg bg-slate-100 flex items-center justify-center mb-6 border border-slate-200 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                     <service.icon className="w-7 h-7 text-primary group-hover:text-secondary transition-colors" />
                   </div>
-                  
+
                   <h4 className="text-xl font-bold text-primary mb-3 font-heading uppercase tracking-wide">
                     {service.title}
                   </h4>
-                  
+
                   <p className="text-slate-600 text-sm leading-relaxed group-hover:text-slate-700 transition-colors">
                     {service.description}
                   </p>
                 </div>
-                
+
                 {/* Bottom accent line */}
                 <div className="absolute bottom-0 left-0 w-0 h-1 bg-secondary group-hover:w-full transition-all duration-500 ease-out" />
               </div>
@@ -249,16 +257,16 @@ export function ScanToBIMPage() {
           </h3>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {visibleStudies.map((study) => (
-              <div 
+              <div
                 key={study.id}
                 className="group relative bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col cursor-pointer transform hover:-translate-y-1"
                 onClick={() => navigate(`/case-study/${study.id}`)}
               >
                 <div className="relative h-72 overflow-hidden">
                   <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-slate-900/0 transition-colors z-10" />
-                  <img 
-                    src={study.image} 
-                    alt={study.title} 
+                  <img
+                    src={study.image}
+                    alt={study.title}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4 z-20">
@@ -267,7 +275,7 @@ export function ScanToBIMPage() {
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="p-8 flex-1 flex flex-col">
                   <h4 className="text-2xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors font-heading">
                     {study.title}
@@ -287,8 +295,8 @@ export function ScanToBIMPage() {
           {/* View All Button */}
           {visibleCount < caseStudies.length && (
             <div className="text-center">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
                 onClick={() => setVisibleCount(caseStudies.length)}
                 className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-6 text-lg font-bold tracking-wide uppercase transition-all"
@@ -311,15 +319,28 @@ export function ScanToBIMPage() {
             {process.map((step, index) => (
               <div
                 key={index}
-                className="relative bg-white p-8 rounded-xl border border-slate-200 hover:border-secondary transition-all hover:shadow-xl group"
+                className="relative bg-white rounded-xl border border-slate-200 hover:border-secondary transition-all hover:shadow-xl group overflow-hidden flex flex-col"
               >
-                <div className="text-6xl font-bold text-slate-200 absolute top-4 right-4 group-hover:text-slate-300 transition-colors">
-                  {step.number}
+                {step.image && (
+                  <div className="relative h-64 w-full overflow-hidden flex-shrink-0">
+                    <ImageWithFallback
+                      src={step.image}
+                      alt={step.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                  </div>
+                )}
+
+                <div className={`p-8 relative flex-1 flex flex-col ${step.image ? 'pt-6' : ''}`}>
+                  <div className="text-6xl font-bold text-slate-100 absolute top-4 right-4 group-hover:text-slate-200 transition-colors pointer-events-none">
+                    {step.number}
+                  </div>
+                  <h4 className="text-xl font-bold text-primary mb-3 relative z-10 group-hover:text-secondary transition-colors">
+                    {step.title}
+                  </h4>
+                  <p className="text-slate-600 relative z-10 text-sm leading-relaxed">{step.description}</p>
                 </div>
-                <h4 className="text-xl font-bold text-primary mb-3 relative z-10 group-hover:text-secondary transition-colors">
-                  {step.title}
-                </h4>
-                <p className="text-slate-600 relative z-10 text-sm leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
@@ -332,8 +353,8 @@ export function ScanToBIMPage() {
           <h3 className="text-3xl lg:text-4xl font-bold text-primary mb-8 font-heading uppercase">Deliverables</h3>
           <div className="bg-primary p-8 lg:p-12 rounded-2xl text-white relative overflow-hidden">
             {/* Background Pattern */}
-             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:20px_20px] opacity-20" />
-            
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:20px_20px] opacity-20" />
+
             <div className="grid md:grid-cols-2 gap-6 relative z-10">
               {deliverables.map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
@@ -353,8 +374,8 @@ export function ScanToBIMPage() {
         <div className="container mx-auto px-4 lg:px-8">
           <h3 className="text-3xl lg:text-4xl font-bold text-primary mb-8 font-heading uppercase">Industries We Serve</h3>
           <p className="text-lg text-slate-600 mb-10 max-w-4xl">
-            Serving California projects with seismic-aware coordination and code-compliant deliverables. 
-            Our modeling approach supports CBC/Title-24 workflows for projects that require accurate 
+            Serving California projects with seismic-aware coordination and code-compliant deliverables.
+            Our modeling approach supports CBC/Title-24 workflows for projects that require accurate
             as-built documentation before design or permitting.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
@@ -400,10 +421,10 @@ export function ScanToBIMPage() {
             Service Packages
           </h3>
           <p className="text-lg text-slate-600 mb-12 max-w-4xl">
-            Choose the package that best fits your project needs. Each package is tailored to deliver 
+            Choose the package that best fits your project needs. Each package is tailored to deliver
             the right level of detail for your engineering and construction requirements.
           </p>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {packages.map((pkg, index) => (
               <div
@@ -449,7 +470,7 @@ export function ScanToBIMPage() {
               </div>
             </div>
             <p className="text-sm text-slate-500 italic border-t border-slate-200 pt-6">
-              Exact schedule and pricing are site-dependent — submit your project brief and we'll respond 
+              Exact schedule and pricing are site-dependent — submit your project brief and we'll respond
               with a clear scope and cost estimate.
             </p>
           </div>
