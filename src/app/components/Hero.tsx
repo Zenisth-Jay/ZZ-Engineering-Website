@@ -1,7 +1,7 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/app/components/ui/button';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
-import heroImage from 'figma:asset/d522a823ecc00c4b530485c18f8ffedb2eb4a8ef.png';
+import heroImage from 'figma:asset/HeroImage.png';
 
 export function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -35,12 +35,12 @@ export function Hero() {
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-extrabold text-white leading-tight font-heading uppercase tracking-tight">
-              Precision Engineering <br />
-              <span className="text-secondary">Solutions</span>
+              Plan. Design. Build <br />
+              <span className="text-secondary">With Precision</span>
             </h1>
             
             <p className="text-xl text-slate-300 leading-relaxed max-w-xl font-light">
-              Zion Engineering Services, LLC delivers integrated engineering, design, and reality-capture solutions for residential, commercial, and land development projects. We provide precise site data, permit-ready plans, and accurate digital models that move projects efficiently from documentation to construction.
+              We help you move from site understanding to final execution with integrated services across Scan-to-BIM, engineering design, and construction ensuring accuracy, efficiency, and fewer on-site surprises.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -70,7 +70,7 @@ export function Hero() {
               </div>
               <div className="w-px h-12 bg-white/10" />
               <div>
-                <div className="text-3xl font-bold text-white font-heading">500+</div>
+                <div className="text-3xl font-bold text-white font-heading">50+</div>
                 <div className="text-xs text-slate-400 uppercase tracking-wider font-semibold">Projects</div>
               </div>
               <div className="w-px h-12 bg-white/10" />

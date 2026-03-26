@@ -22,7 +22,7 @@ export function EngineeringServices() {
       title: 'Develop Plans & Process Permits',
       icon: Building2,
       image: service1Image,
-      description: 'Comprehensive solutions from conceptual design to final city approvals, ensuring rapid and compliant project launches.',
+      description: 'From initial design to final approvals, we prepare accurate, permit-ready plans that meet local regulations and help you move forward without delays.',
       items: [
         'Residential & Commercial Buildings',
         'Accessory Dwelling Unit (ADU)',
@@ -37,6 +37,7 @@ export function EngineeringServices() {
       title: 'Land Development',
       icon: Layers3,
       image: service2Image,
+      description: "We plan and design land development solutions that are compliant, efficient, and ready for execution ensuring smooth approvals and practical site outcomes.",
       items: [
         'Lot Split (SB9 & Conventional)',
         'Grading Plan',
@@ -53,11 +54,12 @@ export function EngineeringServices() {
       title: 'Foundation Inspection',
       icon: Home,
       image: service3Image,
+      description: "Identify structural issues early and ensure your foundation is safe, compliant, and ready for repair or certification.",
       items: [
-        'Slab-on-Grade Foundation: Examining for floor cracks, water damage, and other distress on the house',
-        'Raised Foundation: Evaluating the pier post & beams, stem wall and the overall integrity of the foundation',
-        'Provide an Engineering Report: Outlining the findings and recommendations',
-        'Provide a Foundation Certificate: To confirm and certify that repairs are per the engineering report. Prepared by a licensed Engineer'
+        'Slab Foundation Inspection (cracks, water damage, distress)',
+        'Raised Foundation Evaluation (piers, beams, structural integrity)',
+        'Engineering Reports with clear findings & recommendations',
+        'Foundation Certification by a Licensed Engineer'
       ],
       size: 'wide' // 2x1
     },
@@ -66,12 +68,13 @@ export function EngineeringServices() {
       title: 'Other Services',
       icon: Wrench,
       image: service4Image,
+      description:"Additional engineering support to resolve compliance issues, support design changes, and enhance project planning.",
       items: [
         'Code Violation Resolution',
-        'Design of beam, column & footing in lieu of the bearing wall to be removed',
-        'Inspect & Apply Permit under SB 721 & 326 "Balcony Law"',
-        'Rendering & 3D Model Design',
-        'Landscape Plans'
+        'Structural Design (Beam, Column & Footing)',
+        'Balcony Inspection & Permit (SB 721 & SB 326)',
+        '3D Modeling & Rendering',
+        'Landscape Planning'
       ],
       size: 'wide' // 2x1
     }
@@ -98,7 +101,7 @@ export function EngineeringServices() {
           <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 border border-secondary/20 text-secondary rounded-full text-sm font-bold uppercase tracking-widest backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-              Comprehensive Engineering Solutions
+              Licensed Engineering Across California & Nevada
             </div>
 
             <h1 className="text-4xl lg:text-6xl font-extrabold text-white leading-tight font-heading uppercase tracking-tight">
@@ -107,7 +110,7 @@ export function EngineeringServices() {
             </h1>
 
             <p className="text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto font-light">
-              From design and permitting to land development and foundation inspection—our expert team delivers high-quality engineering services across California and Nevada with precision, integrity, and innovation.
+             We provide end-to-end engineering support from plans and permits to land development and foundation inspection ensuring every decision is backed by accuracy, compliance, and real-world feasibility.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">

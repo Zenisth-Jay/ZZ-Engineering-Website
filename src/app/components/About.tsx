@@ -6,17 +6,17 @@ export function About() {
     {
       icon: Award,
       title: 'Quality First',
-      description: 'Delivering engineering solutions that meet and exceed client expectations.',
+      description: 'Delivering precise engineering solutions that stand the test of time.',
     },
     {
       icon: Shield,
       title: 'Trust & Transparency',
-      description: 'Building long-lasting relationships based on honesty and clear communication.',
+      description: 'Clear communication and honest processes at every stage.',
     },
     {
       icon: Users,
       title: 'Client-Focused',
-      description: 'Your project success is our priority, every step of the way.',
+      description: 'Every decision is aligned with your project’s success.',
     },
     {
       icon: TrendingUp,
@@ -41,18 +41,20 @@ export function About() {
             <h2 className="text-lg font-bold text-secondary uppercase tracking-widest mb-4">
               Our Legacy
             </h2>
-            <h3 className="text-3xl lg:text-6xl font-extrabold text-primary mb-6 font-heading uppercase leading-tight">
-              Legacy of Licensed Excellence
+            <h3 className="text-3xl lg:text-5xl font-extrabold text-primary mb-6 font-heading uppercase leading-tight">
+              A Legacy of Licensed Engineering Excellence
             </h3>
             <p className="text-2xl text-slate-600 mb-6 leading-relaxed">
-              Zion Engineering Services, LLC is a privately owned engineering firm providing services
-              to the states of California and Nevada. Our principal, <strong>Paul Esteban, P.E.</strong>,
-              is committed to providing high-quality services that meet and exceed clients' expectations.
+              We are a licensed engineering firm delivering integrated solutions across reality capture, engineering design, and construction.
+              From residential projects to complex developments, we help clients move forward with accurate data, reliable planning, and execution you can trust.
             </p>
             <p className="text-2xl text-slate-600 leading-relaxed">
-              We specialize in structural engineering, plan review, and innovative reality capture
-              solutions. With our new Scan-to-BIM service, we're helping clients transform existing
-              structures into accurate digital models, reducing risk and accelerating project timelines.
+              Our approach is simple get it right from the start.
+              By combining on-site capture, detailed engineering, and practical construction expertise, we reduce uncertainty, prevent costly errors, and keep projects moving efficiently from concept to completion.
+            </p>
+            <br />
+            <p className="text-2xl text-slate-600 leading-relaxed">
+              Led by <strong>Paul Esteban, P.E.</strong>, our team is committed to maintaining the highest standards of quality, compliance, and transparency ensuring every project meets and exceeds expectations.
             </p>
           </div>
 

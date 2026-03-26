@@ -16,6 +16,12 @@ import {
 } from 'lucide-react';
 import { Button } from '@/app/components/ui/button';
 import { ImageWithFallback } from '@/app/components/figma/ImageWithFallback';
+import card1 from '@/assets/card1.png';
+import card2 from '@/assets/card2.png';
+import card3 from '@/assets/card3.png';
+import card4 from '@/assets/card4.png';
+import card5 from '@/assets/card5.png';
+
 
 export function ConstructionServicesPage() {
   const navigate = useNavigate();
@@ -31,6 +37,7 @@ export function ConstructionServicesPage() {
     {
       icon: Building,
       title: "Residential & Commercial Building Construction",
+      description: "From ground-up construction to additions and conversions, we build structures that are compliant, efficient, and built to last.",
       items: [
         "Ground-up construction",
         "Additions, expansions, and conversions",
@@ -38,54 +45,63 @@ export function ConstructionServicesPage() {
         "Garage conversions",
         "Structural and non-structural remodels",
         "Tenant improvements"
-      ]
+      ],
+      image: card1
     },
+
     {
       icon: Paintbrush,
       title: "Interior & Exterior Renovations",
+      description:"Upgrade and transform existing spaces with high-quality finishes, functional improvements, and modern design execution.",
       items: [
         "Kitchens, bathrooms, and whole-home remodels",
         "Flooring, drywall, painting, and finish carpentry",
         "Window and door replacement",
         "Roofing, siding, stucco (when part of a multi-trade project)"
-      ]
+      ],
+      image: card2
     },
+
     {
       icon: Users,
       title: "Coordination of Multiple Trades",
+      description: "We manage and coordinate multiple specialized trades to ensure smooth execution, proper sequencing, and high-quality results.",
       items: [
         "Plumbing (C-36)",
         "Electrical (C-10)",
         "HVAC (C-20)",
-        "Concrete (C-8)",
-        "Masonry (C-29)",
-        "Carpentry (C-5, C-6)",
-        "Roofing (C-39)",
-        "Landscaping (C-27)",
-        "Tile (C-54)",
-        "Painting (C-33)"
-      ]
+        "Structural & Finishing",
+        "Exterior & Final Work",
+      ],
+      image: card3
     },
+
     {
       icon: ClipboardCheck,
       title: "Project Management & Construction Administration",
+      description: "Full project oversight to keep construction on schedule, within budget, and aligned with safety and compliance standards.",
       items: [
         "Scheduling and coordinating subcontractors",
         "Managing inspections and code compliance",
         "Overseeing safety and site operations",
-        "Providing cost estimates and project budgets"
-      ]
+        "Cost Estimation & Project Budgeting"
+      ],
+      image: card4
     },
+
     {
       icon: Home,
       title: "Home Improvement Contracting",
+      description: "Reliable solutions for small to mid-scale upgrades, repairs, and improvements to enhance existing homes",
       items: [
         "Remodels",
         "Repairs",
         "Alterations",
         "Improvements to existing structures"
-      ]
+      ],
+      image: card5
     }
+
   ];
 
   const process = [
@@ -164,13 +180,10 @@ export function ConstructionServicesPage() {
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-6 font-heading uppercase tracking-tight">
               Construction Services<br />
-              <span className="text-secondary">Building Excellence from Ground Up</span>
+              <span className="text-secondary text-3xl">From Ground-Up Builds to Complete Renovations</span>
             </h1>
             <p className="text-xl lg:text-2xl text-slate-300 leading-relaxed font-light mb-10">
-              Zion Engineering's licensed B-contractor services deliver comprehensive construction solutions 
-              for residential and commercial projects throughout California and Nevada. From ground-up builds 
-              to complete renovations, we coordinate all trades and manage every phase with precision and 
-              professionalism.
+              Whether you're building new, upgrading existing spaces, or managing complex multi-trade projects, we deliver construction solutions that are structured, reliable, and built to last.
             </p>
             <Button
               onClick={() => scrollToSection('contact')}
@@ -202,7 +215,7 @@ export function ConstructionServicesPage() {
               Comprehensive Construction Services
             </h3>
             <p className="text-lg text-slate-600 font-light">
-              Licensed B-contractor capabilities covering all aspects of residential and commercial construction.
+              Licensed B-contractor services covering residential and commercial projects from ground-up construction to renovations, coordination, and complete project management.
             </p>
           </div>
 
@@ -210,20 +223,29 @@ export function ConstructionServicesPage() {
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="group bg-white border border-slate-200 p-8 rounded-xl hover:bg-slate-50 transition-all duration-300 hover:border-secondary hover:-translate-y-1 hover:shadow-xl relative overflow-hidden"
+                className="group bg-white border border-slate-200 rounded-2xl hover:bg-slate-50 transition-all duration-300 hover:border-secondary hover:-translate-y-1 hover:shadow-xl relative overflow-hidden flex flex-col"
               >
-                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <service.icon className="w-24 h-24 text-primary" />
-                </div>
-                
-                <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-lg bg-slate-100 flex items-center justify-center mb-6 border border-slate-200 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <service.icon className="w-7 h-7 text-primary group-hover:text-secondary transition-colors" />
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-6 z-10">
+                    <div className="w-12 h-12 rounded-lg bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
+                      <service.icon className="w-6 h-6 text-secondary" />
+                    </div>
                   </div>
-                  
+                </div>
+
+                <div className="p-8 relative z-10 flex-grow">
                   <h4 className="text-xl font-bold text-primary mb-4 font-heading uppercase tracking-wide">
                     {service.title}
                   </h4>
+
+                  <p>{service.description}</p>
+                  <br />
                   
                   <ul className="space-y-2">
                     {service.items.map((item, idx) => (
@@ -239,6 +261,7 @@ export function ConstructionServicesPage() {
                 <div className="absolute bottom-0 left-0 w-0 h-1 bg-secondary group-hover:w-full transition-all duration-500 ease-out" />
               </div>
             ))}
+
           </div>
         </div>
       </section>

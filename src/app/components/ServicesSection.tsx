@@ -14,7 +14,7 @@ export function ServicesSection() {
           Our Services
         </h3>
         <p className="text-lg text-slate-600 text-center mb-12 max-w-3xl mx-auto">
-          Comprehensive solutions from engineering design to reality capture and full-service construction
+          Integrated solutions across data capture, engineering, and construction designed to move your project forward with clarity and confidence.  
         </p>
         
         <div className="grid lg:grid-cols-3 gap-6">
@@ -42,22 +42,21 @@ export function ServicesSection() {
                 Engineering Services
               </h4>
               <p className="text-slate-700 mb-4 leading-relaxed">
-                Full-spectrum civil, structural, and MEP engineering solutions with precise calculations 
-                and code-compliant designs for residential, commercial, and industrial projects.
+                Designs that are not just compliant but practical, efficient, and ready for execution. We deliver civil, structural, and MEP engineering with a focus on accuracy and real-world application.
               </p>
               
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start gap-2 text-slate-600 text-sm">
                   <span className="text-secondary mt-1">•</span>
-                  <span>Develop Plans & Process Permits</span>
+                  <span>Planning & Permit-Ready Drawings</span>
                 </li>
                 <li className="flex items-start gap-2 text-slate-600 text-sm">
                   <span className="text-secondary mt-1">•</span>
-                  <span>Land Development</span>
+                  <span>Land & Site Development</span>
                 </li>
                 <li className="flex items-start gap-2 text-slate-600 text-sm">
                   <span className="text-secondary mt-1">•</span>
-                  <span>Foundation Inspection</span>
+                  <span>Structural & Foundation Analysis</span>
                 </li>
               </ul>
               
@@ -92,22 +91,21 @@ export function ServicesSection() {
                 Scan-to-BIM
               </h4>
               <p className="text-slate-700 mb-4 leading-relaxed">
-                Survey-grade reality capture using terrestrial LiDAR and photogrammetry, transformed into 
-                certified as-built Revit models and complete digital twin packages.
+                Capture real-world conditions with precision and transform them into reliable digital models. Our Scan-to-BIM process reduces guesswork and improves decision-making from the start.
               </p>
               
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start gap-2 text-slate-600 text-sm">
                   <span className="text-secondary mt-1">•</span>
-                  <span>Renovation & Estimation</span>
+                  <span>Reality Capture & LiDAR Scanning</span>
                 </li>
                 <li className="flex items-start gap-2 text-slate-600 text-sm">
                   <span className="text-secondary mt-1">•</span>
-                  <span>Real Estate Transactions</span>
+                  <span>As-Built & Revit Models</span>
                 </li>
                 <li className="flex items-start gap-2 text-slate-600 text-sm">
                   <span className="text-secondary mt-1">•</span>
-                  <span>Digital Twin & BIM</span>
+                  <span>Digital Twin Creation</span>
                 </li>
                 <li className="flex items-start gap-2 text-slate-600 text-sm">
                   <span className="text-secondary mt-1">•</span>
@@ -146,8 +144,7 @@ export function ServicesSection() {
                 Construction Services
               </h4>
               <p className="text-slate-700 mb-4 leading-relaxed">
-                Licensed B-contractor services for ground-up construction, renovations, and multi-trade 
-                project coordination across residential and commercial projects.
+                From planning to execution, we bring projects to life with structured processes and hands-on expertise. Built with coordination, efficiency, and attention to detail.
               </p>
               
               <ul className="space-y-2 mb-6">
@@ -157,7 +154,7 @@ export function ServicesSection() {
                 </li>
                 <li className="flex items-start gap-2 text-slate-600 text-sm">
                   <span className="text-secondary mt-1">•</span>
-                  <span>Interior & Exterior Renovations</span>
+                  <span>Renovations & Upgrades</span>
                 </li>
                 <li className="flex items-start gap-2 text-slate-600 text-sm">
                   <span className="text-secondary mt-1">•</span>
