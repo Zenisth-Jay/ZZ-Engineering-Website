@@ -117,8 +117,8 @@ export function Header() {
           >
             <img src={logo} alt="Zion Engineering LLC" className="h-10 w-auto" />
             <div className="hidden sm:flex flex-col items-start">
-              <span className="text-xl font-bold text-white tracking-wide">ZION & ZIA</span>
-              <span className="text-[10px] text-secondary font-semibold tracking-widest uppercase">ZZ Design & Build</span>
+              <span className="text-xl font-bold text-white tracking-wide">ZZ DESIGN & BUILD INC.</span>
+             
             </div>
           </button>
 

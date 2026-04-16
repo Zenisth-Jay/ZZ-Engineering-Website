@@ -1,6 +1,6 @@
 import { Phone, Mail, MapPin, Linkedin, Facebook } from 'lucide-react';
 import { useLocation, useNavigate } from '@/app/RouterContext';
-import logo from 'figma:asset/dcace724b56153d6e1f0c986d58fcc32e6088ea4.png';
+import logo from 'figma:asset/logo.svg';
 
 export function Footer() {
   const location = useLocation();
@@ -33,8 +33,8 @@ export function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <img src={logo} alt="Zion Engineering" className="h-10 w-auto" />
               <div className="flex flex-col">
-                <span className="text-xl font-bold font-heading tracking-wide">ZION</span>
-                <span className="text-[10px] text-secondary font-semibold uppercase tracking-widest">Engineering LLC</span>
+                <span className="text-xl font-bold font-heading tracking-wide">ZZ DESIGN & BUILD INC.</span>
+                {/* <span className="text-[10px] text-secondary font-semibold uppercase tracking-widest">Engineering LLC</span> */}
               </div>
             </div>
             <p className="text-slate-400 mb-6 text-sm leading-relaxed">
