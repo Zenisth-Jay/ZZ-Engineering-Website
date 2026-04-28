@@ -85,8 +85,8 @@ export function Header() {
 
   const serviceItems: Array<{ label: string; path?: string; id?: string }> = [
     { label: 'Engineering Services', path: '/engineering-services' },
-    { label: 'Scan-to-BIM', path: '/scan-to-bim' },
     { label: 'Construction Services', path: '/construction-services' },
+    { label: 'Scan-to-BIM', path: '/scan-to-bim' },
   ];
 
   const handleDropdownMouseEnter = () => {
