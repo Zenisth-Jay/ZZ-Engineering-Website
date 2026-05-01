@@ -31,7 +31,7 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Zion Engineering" className="h-10 w-auto" />
+              <img src={logo} alt="Zion Engineering" className="h-16 w-auto" />
               <div className="flex flex-col">
                 <span className="text-xl font-bold font-heading tracking-wide">ZZ DESIGN & BUILD INC.</span>
                 {/* <span className="text-[10px] text-secondary font-semibold uppercase tracking-widest">Engineering LLC</span> */}
