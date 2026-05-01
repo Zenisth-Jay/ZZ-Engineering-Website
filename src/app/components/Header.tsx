@@ -115,7 +115,7 @@ export function Header() {
             onClick={() => handleNavigation('home')}
             className="flex items-center gap-3 hover:opacity-90 transition-opacity"
           >
-            <img src={logo} alt="Zion Engineering LLC" className="h-10 w-auto" />
+            <img src={logo} alt="Zion Engineering LLC" className="h-18 w-auto" />
             <div className="hidden sm:flex flex-col items-start">
               <span className="text-xl font-bold text-white tracking-wide">ZZ DESIGN & BUILD INC.</span>
              
