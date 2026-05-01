@@ -39,8 +39,11 @@ export function Hero() {
               <span className="text-secondary">With Precision</span>
             </h1>
             
-            <p className="text-xl text-slate-300 leading-relaxed max-w-xl font-light">
-              We help you move from site understanding to final execution with integrated services across Scan-to-BIM, engineering design, and construction ensuring accuracy, efficiency, and fewer on-site surprises.
+            <p className="text-xl text-slate-300 leading-relaxed max-w-2xl font-light">
+              As a licensed engineer and licensed general contractor, I provide fully integrated design‑build services that combine technical expertise with practical construction experience. From concept to completion, every project is engineered for safety, efficiency, and long‑term performance. My work focuses on delivering clear solutions, streamlined permitting, and high‑quality construction that stands the test of time. 
+            </p>
+            <p className="text-xl text-slate-300 leading-relaxed max-w-2xl font-light">
+              Also offers advanced Scan‑to‑BIM technology. By capturing existing conditions with high‑resolution 3D scanning and converting them into accurate BIM models, every project begins with verified data, not assumptions 
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -79,7 +82,8 @@ export function Hero() {
                   <CheckCircle2 className="w-5 h-5 text-secondary" />
                   <span>Licensed P.E.</span>
                 </div>
-                <div className="text-xs text-slate-400 uppercase tracking-wider font-semibold pl-7">Quality Assured</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider font-semibold pl-7">Professional Engineer no. C86507</div>
+                <div className="text-xs text-slate-400 uppercase tracking-wider font-semibold pl-7">Contractor's License no. 1154203</div>
               </div>
             </div>
           </div>

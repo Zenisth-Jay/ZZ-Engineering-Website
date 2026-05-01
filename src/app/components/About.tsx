@@ -45,7 +45,7 @@ export function About() {
               A Legacy of Licensed Engineering Excellence
             </h3>
             <p className="text-2xl text-slate-600 mb-6 leading-relaxed">
-              We are a licensed engineering firm delivering integrated solutions across reality capture, engineering design, and construction.
+              We are a licensed engineering firm <span className=' font-bold'>(Professional Engineer no. C86507)</span> delivering integrated solutions across reality capture, engineering design, and construction.
               From residential projects to complex developments, we help clients move forward with accurate data, reliable planning, and execution you can trust.
             </p>
             <p className="text-2xl text-slate-600 leading-relaxed">

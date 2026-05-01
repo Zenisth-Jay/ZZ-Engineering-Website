@@ -158,7 +158,7 @@ export function Footer() {
                   <div className="w-8 h-8 rounded bg-slate-800 flex items-center justify-center group-hover:bg-secondary group-hover:text-primary transition-colors flex-shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
-                  <span className="break-all pt-1">pesteban@zionengineeringllc.com</span>
+                  <span className="break-all pt-1">pe@zzdesignbuild.com</span>
                 </a>
               </li>
               <li className="text-slate-400 flex items-start gap-3 text-sm group">

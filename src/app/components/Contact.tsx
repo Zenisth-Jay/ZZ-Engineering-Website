@@ -100,7 +100,7 @@ export function Contact() {
                   <div>
                     <div className="text-sm text-slate-500 mb-1 uppercase tracking-wide font-bold">Email</div>
                     <div className="font-semibold text-primary text-sm break-all">
-                      pesteban@zionengineeringllc.com
+                      pe@zzdesignbuild.com
                     </div>
                   </div>
                 </a>
@@ -120,7 +120,8 @@ export function Contact() {
             <div className="bg-gradient-to-br from-primary to-slate-900 p-8 rounded-xl text-white shadow-lg border-l-4 border-secondary">
               <h4 className="font-bold mb-2 text-secondary uppercase tracking-wide">Licensed Professional Engineer</h4>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Paul Esteban, P.E. leads every project with expertise, integrity, and a commitment to excellence.
+                Professional Engineer no. C86507 <br /> Contractor's License no. 1154203
+
               </p>
             </div>
           </div>
