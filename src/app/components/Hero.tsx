@@ -68,12 +68,12 @@ export function Hero() {
             {/* Trust Indicators */}
             <div className="flex items-center gap-8 pt-8 border-t border-white/10">
               <div>
-                <div className="text-3xl font-bold text-white font-heading">15+</div>
+                <div className="text-3xl font-bold text-white font-heading">20+</div>
                 <div className="text-xs text-slate-400 uppercase tracking-wider font-semibold">Years Exp.</div>
               </div>
               <div className="w-px h-12 bg-white/10" />
               <div>
-                <div className="text-3xl font-bold text-white font-heading">50+</div>
+                <div className="text-3xl font-bold text-white font-heading">100+</div>
                 <div className="text-xs text-slate-400 uppercase tracking-wider font-semibold">Projects</div>
               </div>
               <div className="w-px h-12 bg-white/10" />
